@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
+        <title>DEMO</title>
+        
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width">
+        <base href="/"/>
+        
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"/></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"/></script>
+    </head>
+    <body>
+        <h1>#Misio Tic 2022</h1>
+        <div class="unauthenticated">para iniciar secion con git:
+            <a href="/oauth2/authorization/github">haz cick</a></div>
+        
+        <div class="authenticated" style="display:none">autenticado como: 
+        <span id ="user"></span></div>
+        
+        
+    </body>
+    <script type="text/javascript">
+            $.get("/user", function (data){
+                $("#user").html(data.login);
+                $(".unauthenticated").hide()
+                $(".authenticated").show()
+            });
+        </script>
+</html>
