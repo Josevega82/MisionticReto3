@@ -61,6 +61,7 @@ public class ReservaController {
     }
     
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
     public boolean deleteReserva(@PathVariable("id") long id) {
         return serviceReserva.deleteReserva(id);
     }

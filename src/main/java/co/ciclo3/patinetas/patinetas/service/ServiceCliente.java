@@ -53,8 +53,8 @@ public class ServiceCliente {
              if (c.getPassword()!= null) {
                  g.get().setPassword(c.getPassword());
              }
-             if (c.getEmail() != null) {
-                 g.get().setReservations(c.getReservations());
+             if (c.getName() != null) {
+                 g.get().setName(c.getName());
              }
              
              

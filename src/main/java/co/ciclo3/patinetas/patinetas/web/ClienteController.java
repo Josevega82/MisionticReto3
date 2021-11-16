@@ -51,6 +51,7 @@ public class ClienteController {
     }
     
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
     public boolean deleteCliente(@PathVariable("id") long id) {
         return ServiceCliente.deleteCliente(id);
     }

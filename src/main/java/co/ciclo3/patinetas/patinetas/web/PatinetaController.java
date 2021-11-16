@@ -49,6 +49,7 @@ public class PatinetaController {
     }
     
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
     public boolean deleteCategoria(@PathVariable("id") long id) {
         return servicePatineta.deleteCategoria(id);
     }
