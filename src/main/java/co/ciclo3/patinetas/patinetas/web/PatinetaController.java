@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PatinetaController {
     @Autowired
     private ServicePatineta servicePatineta;
+    
     @GetMapping("/all")
     public List<Patineta> getPatinetas() {
         return servicePatineta.getAll();

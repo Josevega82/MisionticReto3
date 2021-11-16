@@ -27,10 +27,12 @@ public class MensajeController {
     
     @Autowired
     private ServiceMensaje ServiceMensaje;
+    
     @GetMapping("/all")
     public List<Mensaje> getMensaje(){
         return ServiceMensaje.getAll();
     }
+    
     @GetMapping("/{id}")
     public Optional<Mensaje> getMensaje(@PathVariable("id") int id) {
         return ServiceMensaje.getMensaje(id);

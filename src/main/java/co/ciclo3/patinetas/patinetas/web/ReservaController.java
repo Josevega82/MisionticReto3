@@ -27,6 +27,7 @@ public class ReservaController {
     
     @Autowired
     private ServiceReserva serviceReserva;
+    
     @GetMapping("/all")
     public List<Reserva> getReserva(){
         return serviceReserva.getAll();
