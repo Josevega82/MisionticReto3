@@ -33,19 +33,13 @@ public class CategoriaController {
     public Optional<Categoria> getCategoria(@PathVariable("id") int id) {
         return serviceCategoria.getCategoria(id);
     }
-         
-    @PostMapping("/all")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Categoria saveAll(@RequestBody Categoria c) {
-        return serviceCategoria.save(c);
-    }
-    
+
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Categoria save(@RequestBody Categoria c) {
         return serviceCategoria.save(c);
     }
-    @PutMapping("/all")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Categoria update(@RequestBody Categoria c) {
         return serviceCategoria.update(c);

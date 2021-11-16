@@ -35,18 +35,14 @@ public class PatinetaController {
     public Optional<Patineta> getPatinetas(@PathVariable("id") int id) {
         return servicePatineta.getPatineta(id);
     }
-    @PostMapping("/all")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Patineta saveAll(@RequestBody Patineta p) {
-        return servicePatineta.save(p);
-    }
+  
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Patineta save(@RequestBody Patineta p) {
         return servicePatineta.save(p);
     }
-    @PutMapping("/all")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Patineta update(@RequestBody Patineta p) {
         return servicePatineta.update(p);

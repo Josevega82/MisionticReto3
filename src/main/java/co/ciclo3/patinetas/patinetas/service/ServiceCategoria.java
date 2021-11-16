@@ -41,6 +41,9 @@ public class ServiceCategoria {
              if (c.getName() != null) {
                  g.get().setName(c.getName());
              }
+             if (c.getDescription() != null) {
+                 g.get().setDescription(c.getDescription());
+             }
              return categoriaRepository.save(g.get());
             }
                     

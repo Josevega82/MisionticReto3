@@ -36,18 +36,14 @@ public class MensajeController {
         return ServiceMensaje.getMensaje(id);
     }
          
-    @PostMapping("/all")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Mensaje saveAll(@RequestBody Mensaje c) {
-        return ServiceMensaje.save(c);
-    }
+   
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Mensaje save(@RequestBody Mensaje c) {
         return ServiceMensaje.save(c);
     }
-    @PutMapping("/all")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Mensaje update(@RequestBody Mensaje c) {
         return ServiceMensaje.update(c);

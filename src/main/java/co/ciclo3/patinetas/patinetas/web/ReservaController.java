@@ -36,18 +36,25 @@ public class ReservaController {
         return serviceReserva.getReserva(id);
     }
          
-    @PostMapping("/all")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Reserva saveAll(@RequestBody Reserva c) {
-        return serviceReserva.save(c);
-    }
+
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Reserva save(@RequestBody Reserva c) {
-        return serviceReserva.save(c);
+        
+        if(c.getIdReservation()== null){
+            c.setStatus("created");
+            
+             return serviceReserva.save(c);
+            
+                    
+        }
+        return c;
+//        Optional<Reserva> pAux = serviceReserva.getReserva(c.getIdReservation());
+//        pAux.get().setStatus("created");
+//        return serviceReserva.save(c);
     }
-    @PutMapping("/all")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Reserva update(@RequestBody Reserva c) {
         return serviceReserva.update(c);

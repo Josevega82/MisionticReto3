@@ -25,10 +25,12 @@ public class ServiceReserva {
     
     public Reserva save(Reserva c) {
         if (c.getIdReservation()==null){
+            
             return ReservaRepository.save(c);
         }else{
             Optional<Reserva> pAux = ReservaRepository.getReserva(c.getIdReservation());
             if(pAux.isEmpty()){
+                
                 return ReservaRepository.save(c);
             }else{
                 return c;

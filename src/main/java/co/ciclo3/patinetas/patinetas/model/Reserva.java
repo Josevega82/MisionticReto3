@@ -23,10 +23,11 @@ public class Reserva {
     
     private Date startDate;
     private Date devolutionDate;
+    private String status;
     
     @ManyToOne
     @JoinColumn(name = "idSkates")
-    @JsonIgnoreProperties({"client","skates","reservations","messages"})
+    @JsonIgnoreProperties({"client","skates","reservations"})
     private Patineta skate;
     
     @ManyToOne
@@ -34,8 +35,28 @@ public class Reserva {
     @JsonIgnoreProperties({"client","skates","reservations","messages"})
     private Cliente client;
     
-    
+    @ManyToOne
+    @JoinColumn(name = "id_Score")
+    @JsonIgnoreProperties({"scores"})
+    private Puntaje score;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Puntaje getScore() {
+        return score;
+    }
+
+    public void setScore(Puntaje score) {
+        this.score = score;
+    }
+    
+    
     public Long getIdReservation() {
         return idReservation;
     }
