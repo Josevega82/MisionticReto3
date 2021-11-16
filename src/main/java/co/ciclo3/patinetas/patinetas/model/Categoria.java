@@ -17,7 +17,7 @@ public class Categoria {
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
     @JsonIgnoreProperties({"category"})
-    public List<Patineta> skate;
+    public List<Patineta> skates;
 
     public Long getId() {
         return id;

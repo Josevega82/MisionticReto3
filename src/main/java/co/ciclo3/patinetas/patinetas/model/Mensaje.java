@@ -23,12 +23,12 @@ public class Mensaje {
     
     @ManyToOne
     @JoinColumn(name = "skate_id")
-    @JsonIgnoreProperties({"message","reservations"})
+    @JsonIgnoreProperties({"messages","reservations"})
     private Patineta skate;
     
     @ManyToOne
     @JoinColumn(name = "client_id")
-    @JsonIgnoreProperties({"message","reservations"})
+    @JsonIgnoreProperties({"messages","reservations"})
     private Cliente client;
     
     

@@ -27,17 +27,17 @@ public class Patineta {
     
     @ManyToOne
     @JoinColumn(name = "categoria_id")
-    @JsonIgnoreProperties("skate")
+    @JsonIgnoreProperties("skates")
     private Categoria category;
     
     
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "skate")
-    @JsonIgnoreProperties({"skate","client"})
-    public List<Mensaje> message;
+    @JsonIgnoreProperties({"skates","client"})
+    public List<Mensaje> messages;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    @JsonIgnoreProperties({"client","skate"})
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "skate")
+    @JsonIgnoreProperties({"client","skates"})
     public List<Reserva> reservations;
 
     public Long getId() {
@@ -88,12 +88,12 @@ public class Patineta {
         this.category = category;
     }
 
-    public List<Mensaje> getMessage() {
-        return message;
+    public List<Mensaje> getMessages() {
+        return messages;
     }
 
-    public void setMessage(List<Mensaje> message) {
-        this.message = message;
+    public void setMessages(List<Mensaje> messages) {
+        this.messages = messages;
     }
 
     public List<Reserva> getReservations() {
@@ -105,6 +105,6 @@ public class Patineta {
     }
     
     
-    
+
 
 }

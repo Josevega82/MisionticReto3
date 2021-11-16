@@ -26,22 +26,13 @@ public class Cliente {
     private Integer age;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    @JsonIgnoreProperties({"client","skate"})
-    public List<Mensaje> message;
+    @JsonIgnoreProperties({"client","skates"})
+    public List<Mensaje> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    @JsonIgnoreProperties({"client","skate"})
+    @JsonIgnoreProperties({"client","skates"})
     public List<Reserva> reservations;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    
     public Long getIdClient() {
         return idClient;
     }
@@ -66,6 +57,14 @@ public class Cliente {
         this.password = password;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Integer getAge() {
         return age;
     }
@@ -74,12 +73,12 @@ public class Cliente {
         this.age = age;
     }
 
-    public List<Mensaje> getMessage() {
-        return message;
+    public List<Mensaje> getMessages() {
+        return messages;
     }
 
-    public void setMessage(List<Mensaje> message) {
-        this.message = message;
+    public void setMessages(List<Mensaje> messages) {
+        this.messages = messages;
     }
 
     public List<Reserva> getReservations() {
@@ -89,6 +88,8 @@ public class Cliente {
     public void setReservations(List<Reserva> reservations) {
         this.reservations = reservations;
     }
+    
+    
     
     
     

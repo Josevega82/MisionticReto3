@@ -47,8 +47,8 @@ public class ServiceCliente {
              if (c.getAge()!= null) {
                  g.get().setAge(c.getAge());
              }
-             if (c.getMessage()!= null) {
-                 g.get().setMessage(c.getMessage());
+             if (c.getMessages()!= null) {
+                 g.get().setMessages(c.getMessages());
              }
              if (c.getPassword()!= null) {
                  g.get().setPassword(c.getPassword());
