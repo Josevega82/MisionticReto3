@@ -48,7 +48,7 @@ public class ClienteController {
     public Cliente save(@RequestBody Cliente c) {
         return ServiceCliente.save(c);
     }
-    @PutMapping("/update")
+    @PutMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente update(@RequestBody Cliente c) {
         return ServiceCliente.update(c);

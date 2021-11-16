@@ -46,7 +46,7 @@ public class PatinetaController {
     public Patineta save(@RequestBody Patineta p) {
         return servicePatineta.save(p);
     }
-    @PutMapping("/update")
+    @PutMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Patineta update(@RequestBody Patineta p) {
         return servicePatineta.update(p);

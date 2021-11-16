@@ -33,11 +33,11 @@ public class Patineta {
     
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "skate")
-    @JsonIgnoreProperties({"skates","client"})
+    @JsonIgnoreProperties({"skate","client"})
     public List<Mensaje> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "skate")
-    @JsonIgnoreProperties({"client","skates"})
+    @JsonIgnoreProperties({"client","skate"})
     public List<Reserva> reservations;
 
     public Long getId() {

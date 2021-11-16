@@ -24,35 +24,35 @@ import org.springframework.web.bind.annotation.RestController;
 public class CategoriaController {
     
     @Autowired
-    private ServiceCategoria ServiceCategoria;
+    private ServiceCategoria serviceCategoria;
     @GetMapping("/all")
     public List<Categoria> getCategoria(){
-        return ServiceCategoria.getAll();
+        return serviceCategoria.getAll();
     }
     @GetMapping("/{id}")
     public Optional<Categoria> getCategoria(@PathVariable("id") int id) {
-        return ServiceCategoria.getCategoria(id);
+        return serviceCategoria.getCategoria(id);
     }
          
     @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Categoria saveAll(@RequestBody Categoria c) {
-        return ServiceCategoria.save(c);
+        return serviceCategoria.save(c);
     }
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Categoria save(@RequestBody Categoria c) {
-        return ServiceCategoria.save(c);
+        return serviceCategoria.save(c);
     }
-    @PutMapping("/update")
+    @PutMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Categoria update(@RequestBody Categoria c) {
-        return ServiceCategoria.update(c);
+        return serviceCategoria.update(c);
     }
     
     @DeleteMapping("/{id}")
     public boolean deleteCategoria(@PathVariable("id") long id) {
-        return ServiceCategoria.deleteCategoria(id);
+        return serviceCategoria.deleteCategoria(id);
     }
 }

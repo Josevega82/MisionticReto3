@@ -1,10 +1,8 @@
 package co.ciclo3.patinetas.patinetas.service;
 
-import co.ciclo3.patinetas.patinetas.model.Categoria;
-import co.ciclo3.patinetas.patinetas.model.Mensaje;
+
 import co.ciclo3.patinetas.patinetas.model.Reserva;
-import co.ciclo3.patinetas.patinetas.repository.CategoriaRepository;
-import co.ciclo3.patinetas.patinetas.repository.MensajeRepository;
+
 import co.ciclo3.patinetas.patinetas.repository.ReservaRepository;
 import java.util.List;
 

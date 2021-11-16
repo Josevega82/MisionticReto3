@@ -26,35 +26,35 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReservaController {
     
     @Autowired
-    private ServiceReserva ServiceReserva;
+    private ServiceReserva serviceReserva;
     @GetMapping("/all")
     public List<Reserva> getReserva(){
-        return ServiceReserva.getAll();
+        return serviceReserva.getAll();
     }
     @GetMapping("/{id}")
     public Optional<Reserva> getReserva(@PathVariable("id") int id) {
-        return ServiceReserva.getReserva(id);
+        return serviceReserva.getReserva(id);
     }
          
     @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Reserva saveAll(@RequestBody Reserva c) {
-        return ServiceReserva.save(c);
+        return serviceReserva.save(c);
     }
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Reserva save(@RequestBody Reserva c) {
-        return ServiceReserva.save(c);
+        return serviceReserva.save(c);
     }
-    @PutMapping("/update")
+    @PutMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Reserva update(@RequestBody Reserva c) {
-        return ServiceReserva.update(c);
+        return serviceReserva.update(c);
     }
     
     @DeleteMapping("/{id}")
     public boolean deleteReserva(@PathVariable("id") long id) {
-        return ServiceReserva.deleteReserva(id);
+        return serviceReserva.deleteReserva(id);
     }
 }

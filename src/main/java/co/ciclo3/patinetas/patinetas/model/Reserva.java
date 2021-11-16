@@ -26,12 +26,12 @@ public class Reserva {
     
     @ManyToOne
     @JoinColumn(name = "idSkates")
-    @JsonIgnoreProperties({"client","skates","reservations"})
+    @JsonIgnoreProperties({"client","skates","reservations","messages"})
     private Patineta skate;
     
     @ManyToOne
     @JoinColumn(name = "idClient")
-    @JsonIgnoreProperties({"client","skates","reservations"})
+    @JsonIgnoreProperties({"client","skates","reservations","messages"})
     private Cliente client;
     
     
